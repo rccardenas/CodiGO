@@ -13,38 +13,67 @@
         <!-- Todos los input deberian llevar placeholder=texto de ayuda -->
         <!-- INPUT mas usado => type: text -->
         <p>
-            <input type="text" placeholder="Ingrese su nombre"/>
+            <input 
+            id="input-nombre"
+            value=""
+            type="text" 
+            required
+            name="nombre"
+            placeholder="Ingrese su nombre"/>
         </p>
         <!-- INPUT type: number -->
+        <!-- maxlength para longitud de texto -->
         <p>
-            <input type="numbre" placeholder="Ingres esu edad"/>
+            <input 
+            id="input-dni"
+            required
+            type="number" 
+            name="dni" 
+            maxlength="8"
+            placeholder="Ingrese su DNI">
+        </p>
+        <p>
+            <input 
+            required 
+            type="number" 
+            placeholder="Ingres esu edad"/>
         </p>
         <!-- INPUT type: emai -->
         <p>
-            <input type="emai" placeholder="Ingrese su correo electrónico">
+            <input 
+            required 
+            type="email" 
+            placeholder="Ingrese su correo electrónico">
         </p>
         <!-- INPUT type: password -->
         <p>
-            <input type="password" placeholder="Ingrese su contraseña">
+            <input 
+            required 
+            type="password" 
+            placeholder="Ingrese su contraseña">
         </p>
         <!-- INPUT type: date -->
         <p>
-            <input type="date" placeholder="Ingrese su fecha">
+            <input 
+            required 
+            type="date" 
+            placeholder="Ingrese su fecha">
         </p>
         <!-- Lista de acciones -->
         <p>
             <select>
+                <!-- DISABLE para bloquear y no poder seleccionar campo del formulario -->
+                <!-- READONLY para no editar campo y solo ver el dato -->
                 <option value=""disable selected>Selecciona un curso</option>
-                <option value="">Curso de React</option>
-                <option value="">Curso de HTML</option>
-                <option value="">Curso de CSS"</option>
-                <option value="">Curso de Angular"</option>
+                <option value="curso-react">Curso de React</option>
+                <option value="curso-html">Curso de HTML</option>
+                <option value="curso-css">Curso de CSS"</option>
+                <option value="curso-agular">Curso de Angular"</option>
             </select>
         </p>
         <!-- Botones para enviar datos -->
         <button type="submit">Enviar datos con boton</button>
         <input type="submit" value="Enviar datos con input"/>
-        
     </form>
 </body>
 </html>
