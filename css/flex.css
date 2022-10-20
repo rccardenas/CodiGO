@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: red;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;  
+}
+
+.padre {
+    /* DISPLAY DEBE SER FLEX PARA QUE SE PUEDA ORGANIZAR CON LOS SIGUIENTES COMANDOS */
+    display: flex;
+    /* FLEX-WRAP manda a la siguiente linea los elementos que superen el ancho de la pagina */
+    height: 100vh;
+    flex-wrap: wrap;
+    /* JUSTIFY-CONTENT permite alinear elementos horizontalmente */
+    /* flex-start: izquierda */
+    /* center: medio */
+    /* flex-end: derecha */
+    /* space-between: manda elementos a los extremos de lado a lado */
+    /* space-around: similar a spacebetween pero con margenes a los costados */
+    /* spaxce-evenly: similar a space around pero con espacios entre elementos iguales */
+    justify-content: space-between;
+    /* align-items: propiedad de flex que permite alinear elementos verticalmente y comparte las propiedades de justify-content*/
+    align-items: center;
+}
+
+.hijo {
+    width: 25%;
+    height: 100px;
+    border: solid 1px green;
+    background-color: #fff;
+}

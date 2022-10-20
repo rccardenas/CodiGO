@@ -1,0 +1,128 @@
+/* Vamos a usar la fuente agregada */
+/* "Poppins" es la fuente principal, si esta no funcionara pasaria a usarse la siguiente opcion, en este caso "sans.serif" */
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+h2{
+    font-family: 'Dancing Script', cursive;
+}
+
+
+
+h1{
+    color: green;
+    background-color: beige;
+    padding: 20px;
+    text-align: center;
+    font-size: 40px;
+}
+#div_temas{
+    display: block;
+}
+.product_cell{
+    border: 2px solid blue;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.product_cell:hover {
+    border: 2px dashed red;
+    box-shadow: 0px 0px 10px red;
+}
+
+.product_cell:hover > img {
+    border: 4px solid black;
+    opacity: 50%;
+}
+
+.laptop > h2 {
+    color: blue;
+}
+
+.laptop > h3 {
+    color: cadetblue;
+    text-align: right;
+    padding-right: 10px;
+}
+
+.cellphone > h2 {
+    color: aqua;
+}
+
+.cellphone > h3 {
+    color: red;
+    text-align: right;
+    padding-right: 10px;
+}
+
+.headphones > h2 {
+    color: green;
+}
+
+.headphones > h3 {
+    color: skyblue;
+    text-align: right;
+    padding-right: 10px;
+}
+
+/* Estilos para el formulario */
+
+.div_form {
+    width: 400px;
+    margin: 20px auto;
+}
+
+.div_form > form > input {
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    width: 70%;
+    font-size: 20px;
+    padding-left: 20px;
+    outline: none;
+}
+
+.div_form > form > input:focus {
+    border: 2px solid blue;
+}
+
+.div_form > form > button {
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    width: 28%;
+}
+
+.div_form > form > button:hover {
+    background-color: #666;
+    border: none;
+    columns: #fff;
+    cursor: pointer;
+}
+
+.div_form > form > button:focus {
+    border: 2px solid red;
+}
+
+/* Pseudo-Elementos */
+
+.price::before {
+    content: "$ ";
+}
+
+.price::after {
+    content: ".00";
+}
+
+.laptop > h2::before {
+    content: "💻";
+}
+
+.headphones > h2::before {
+    content: "🎧";
+}
+
+.cellphone > h2::before {
+    content: "📱";
+}
