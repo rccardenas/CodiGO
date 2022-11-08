@@ -147,3 +147,51 @@ function crearPersonasCustom() {
 	personas.push(persona);
 	console.log(personas);
 }
+
+function notificacion() {
+	window.alert("Soy una notificacion");
+	console.log(window.location.host);
+	console.log(window.location.pathname);
+	console.log(window.innerHeight);
+	console.log(window.innerWidth);
+
+	// window.open("variables.html", "VariablesTab", "popup");
+}
+
+function goVariables() {
+	window.location.href = "variables.html";
+}
+
+function edadMinima() {
+	// Recorrer el arreglo de personas y determinar la edad minima.
+	let edadMinima = 100;
+
+	// personas.forEach((persona) => {
+	// 	if (persona.years < edadMinima) {
+	// 		edadMinima = persona.years;
+	// 	}
+	// });
+	personas.forEach((persona) => {
+		edadMinima = Math.min(edadMinima, persona.years);
+	});
+
+	console.log("Edad Minina", edadMinima);
+}
+
+function buscarPersonaNombre() {
+	const term = prompt("Ingresa el nombre a buscar:");
+
+	let persona_match;
+	personas.forEach((persona) => {
+		if (persona.name === term) {
+			persona_match = persona;
+		}
+	});
+
+	console.log(persona_match);
+
+	// ahora lo hacemos con .find()
+	const persona_find = personas.find((persona) => persona.name === term);
+	console.log(persona_find);
+}
+
