@@ -11,12 +11,20 @@ import twitter from "./assets/icons/twitter.png";
 function App() {
   const [inputText, setInputText] = useState("");
 
+  const [user, setUser] = useState(null);
+
   function handleInputChange(event) {
     setInputText(event.target.value);
   }
 
-  function searchUser() {
-    console.log(inputText);
+  async function searchUser() {
+    try {
+      const response = await fetch(`https://api.github.com/users/${inputText}`);
+      const data = await response.json();
+      setUser(data)
+    } catch (error) {
+      console.log("Error", error);
+    }
   }
 
   return (
@@ -38,39 +46,39 @@ function App() {
         </div>
         <div className="information-container">
             <div className="image-container">
-                <img width="120" src={profile} alt=""/>
+                <img width="120" src={user?.avatar_url} alt=""/>
             </div>
             <div className="description-container">
                 <div className="user-date-container">
-                    <h2>The Octocat</h2>
-                    <p>Joined 25 Jun 2011</p>
+                    <h2>{user?.name}</h2>
+                    <p>{user?.created_at}</p>
                 </div>
                 <div className="user-bio-container">
-                    <p>@Octocat</p>
-                    <p>This profile has no bio</p>
+                    <p>{user?.login}</p>
+                    <p>{user?.bio}</p>
                 </div>
                 <div className="card-information">
                     <div>
                         <h5>Repos</h5>
-                        <h2>8</h2>
+                        <h2>{user?.public_repos}</h2>
                     </div>
                     <div>
                         <h5>Follower</h5>
-                        <h2>3938</h2>
+                        <h2>{user?.followers}</h2>
                     </div>
                     <div>
                         <h5>Following</h5>
-                        <h2>9</h2>
+                        <h2>{user?.following}</h2>
                     </div>
                 </div>
                 <div className="info-container">
                     <div>
-                        <p><img width="15" src={pin} alt=""/>&nbsp;San Francisco</p>
-                        <p><img width="15" src={twitter} alt=""/>&nbsp;Not avaible</p>
+                        <p><img width="15" src={pin} alt=""/>&nbsp;{user?.location}</p>
+                        <p><img width="15" src={twitter} alt=""/>&nbsp;{user?.twitter_username}</p>
                     </div>
                     <div>
-                        <p><img width="15" src={link} alt=""/>&nbsp;https://github.blog</p>
-                        <p><img width="15" src={hotel} alt=""/>&nbsp;@rccardenas</p>
+                        <p><img width="15" src={link} alt=""/>&nbsp;{user?.blog}</p>
+                        <p><img width="15" src={hotel} alt=""/>&nbsp;{user?.company}</p>
                     </div>
                 </div>
             </div>
