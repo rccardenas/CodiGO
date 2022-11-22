@@ -1,10 +1,22 @@
+import { useState } from "react"; 
 import './App.css';
-import Header from "./components/Header";
+import hotel from "./assets/icons/hotel.png";
+import link from "./assets/icons/link.png";
+import pin from "./assets/icons/pin.png";
+import profile from "./assets/icons/profile.jpg";
+import search from "./assets/icons/search.png";
+import sun from "./assets/icons/sun.png";
+import twitter from "./assets/icons/twitter.png";
 
-// COMPONENTE: Bloque de vista que combina HTML y JS
 function App() {
-  function saludar() {
-    console.log("Hola mundo");
+  const [inputText, setInputText] = useState("");
+
+  function handleInputChange(event) {
+    setInputText(event.target.value);
+  }
+
+  function searchUser() {
+    console.log(inputText);
   }
 
   return (
@@ -12,21 +24,21 @@ function App() {
         <div className="section-1">
             <h4 className="title">devfinder</h4>
             <button className="btn-mode"> 
-                <img width="20" src="./images/sun.png" alt=""/>LIGHT
+                <img width="20" src={sun} alt=""/>LIGHT
             </button>
         </div>
         <div className="search-container">
             <div className="input-container">
-                <img width="20" src="./images/search_1.png" alt=""/>
-                <input className="input-search" type="text" placeholder="Search GitHub username..."/>
+              <img width="20" src={search} alt=""/>
+              <input value={inputText} onChange={handleInputChange} className="input-search" type="text" placeholder="Search GitHub username..."/>
             </div>
             <div>
-                <button className="btn-search">Search</button>
+              <button className="btn-search" onClick={searchUser}>Search</button>
             </div>
         </div>
         <div className="information-container">
             <div className="image-container">
-                <img width="120" src="./images/profile.jpg" alt=""/>
+                <img width="120" src={profile} alt=""/>
             </div>
             <div className="description-container">
                 <div className="user-date-container">
@@ -53,12 +65,12 @@ function App() {
                 </div>
                 <div className="info-container">
                     <div>
-                        <p><img width="15" src="./images/pin.png" alt=""/>&nbsp;San Francisco</p>
-                        <p><img width="15" src="./images/twitter.png" alt=""/>&nbsp;Not avaible</p>
+                        <p><img width="15" src={pin} alt=""/>&nbsp;San Francisco</p>
+                        <p><img width="15" src={twitter} alt=""/>&nbsp;Not avaible</p>
                     </div>
                     <div>
-                        <p><img width="15" src="./images/link.png" alt=""/>&nbsp;https://github.blog</p>
-                        <p><img width="15" src="./images/hotel.png" alt=""/>&nbsp;@rccardenas</p>
+                        <p><img width="15" src={link} alt=""/>&nbsp;https://github.blog</p>
+                        <p><img width="15" src={hotel} alt=""/>&nbsp;@rccardenas</p>
                     </div>
                 </div>
             </div>
