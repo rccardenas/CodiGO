@@ -2,6 +2,7 @@
 
 Es una biblioteca de Javascript para construir interfaces de usuario
 
+
 ## Reglas
 
 - Todo componente debe ser una funcion
@@ -114,4 +115,28 @@ function App() {
     )
 }
 
+## SWEET ALERT
 
+Es una libreria que nos permite mostrar alertas en nuestra aplicacion 
+
+### Instalacion
+
+```bash
+npm install sweetalert
+```
+
+### Uso
+
+```js
+import Swal from "sweetalert2";
+
+Swal.fire("Titulo", "Mensaje", "Tipo");
+```
+
+Tenemos 4 tipos:
+
+- Succes
+- Error
+- Warning
+- Info
+- Question

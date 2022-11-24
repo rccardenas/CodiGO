@@ -1,5 +1,7 @@
 import { useState } from "react"; 
 import UserInformation from "./components/UserInformation";
+import SearchContainer from "./components/SearchContainer";
+import Swal from "sweetalert2";
 import './App.css';
 import search from "./assets/icons/search.png";
 import sun from "./assets/icons/sun.png";
@@ -17,7 +19,16 @@ function App() {
     try {
       const response = await fetch(`https://api.github.com/users/${inputText}`);
       const data = await response.json();
+
+      // VAMOS A VALIDAR QUE EL USUARIO EXISTA
+      if (data.message === "Not Found") {
+        // AQUI AGREGAREMOS LA ALERTA [titulo, mensaje, tipo]
+        Swal.fire("Error", "El usuario que buscas no existe", "error");
+        return;
+      }
+
       setUser(data)
+      setInputText("");
     } catch (error) {
       console.log("Error", error);
     }
@@ -31,15 +42,11 @@ function App() {
                 <img width="20" src={sun} alt=""/>LIGHT
             </button>
         </div>
-        <div className="search-container">
-            <div className="input-container">
-              <img width="20" src={search} alt=""/>
-              <input value={inputText} onChange={handleInputChange} className="input-search" type="text" placeholder="Search GitHub username..."/>
-            </div>
-            <div>
-              <button className="btn-search" onClick={searchUser}>Search</button>
-            </div>
-        </div>
+        <SearchContainer
+          inputText={inputText}
+          handleInputChange={handleInputChange}
+          searchUser={searchUser}
+        />        
         {/* AQUI HAREMOS UNA VALIDACION PARA QUE EL DIV SIGUIENTE EXISTA SIEMPRE Y CUANDO USER TENGA DATOS */}
         { user && <UserInformation user={user}/>}
     </div>
