@@ -59,3 +59,9 @@ git log
 ```bash
 git show id-de-commit
 ```
+
+* Para enviar nuestro proyecto y sus cambios futuros al repositorio vinculado en GitHub
+
+```bash
+git push origin main
+```
