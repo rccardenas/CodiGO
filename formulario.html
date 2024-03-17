@@ -11,28 +11,35 @@
     <!-- lo que esta dentro son las partes del formulario -->
     <!-- Casi todos los tipos de input tienen placeholder -->
     <!-- Input tipo texto -->
+    <!-- required: true (verdadero) -->
     <p>
-      <input type="text" placeholder="Ingrese su nombre">
+      <input 
+        id="input-nombre"
+        value=""
+        type="text"
+        required
+        name="nombre"
+        placeholder="Ingrese su nombre">
     </p>
     <!-- Input tipo numero -->
     <p>
-      <input type="number" placeholder="Ingrese su edad">
+      <input required type="number" name="edad" placeholder="Ingrese su edad">
     </p>
     <!-- Input tipo: email -->
     <p>
-      <input type="email" placeholder="Ingrese su correo">
+      <input required type="email" placeholder="Ingrese su correo">
     </p>
     <!-- Input tipo: password -->
     <p>
-      <input type="password" placeholder="Ingrese su contraseña">
+      <input required type="password" placeholder="Ingrese su contraseña">
     </p>
     <!-- Input tipo: date -->
     <p>
-      <input type="date" placeholder="Ingrese fecha">
+      <input required type="date" placeholder="Ingrese fecha">
     </p>
     <!-- Lista de opciones -->
     <p>
-      <select>
+      <select required>
         <option value="" disabled selected>Selecciona un curso</option>
         <option value="">Curso de React</option>
         <option value="">Curso de HTML</option>
@@ -43,7 +50,7 @@
     <!-- Botones para enviar datos -->
     <button type="submit">Enviar datos con botón</button>
     <input type="submit" value="Enviar datos con input">
-    
+
   </form>
 </body>
 </html>
