@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario</title>
+</head>
+<body>
+  <!-- USamos la etiqueta form para crear un formulario -->
+  <form action="">
+    <!-- lo que esta dentro son las partes del formulario -->
+    <!-- Casi todos los tipos de input tienen placeholder -->
+    <!-- Input tipo texto -->
+    <p>
+      <input type="text" placeholder="Ingrese su nombre">
+    </p>
+    <!-- Input tipo numero -->
+    <p>
+      <input type="number" placeholder="Ingrese su edad">
+    </p>
+    <!-- Input tipo: email -->
+    <p>
+      <input type="email" placeholder="Ingrese su correo">
+    </p>
+    <!-- Input tipo: password -->
+    <p>
+      <input type="password" placeholder="Ingrese su contraseña">
+    </p>
+    <!-- Input tipo: date -->
+    <p>
+      <input type="date" placeholder="Ingrese fecha">
+    </p>
+    <!-- Lista de opciones -->
+    <p>
+      <select>
+        <option value="" disabled selected>Selecciona un curso</option>
+        <option value="">Curso de React</option>
+        <option value="">Curso de HTML</option>
+        <option value="">Curso de CSS</option>
+        <option value="">Curso de Angular</option>
+      </select>
+    </p>
+    <!-- Botones para enviar datos -->
+    <button type="submit">Enviar datos con botón</button>
+    <input type="submit" value="Enviar datos con input">
+  </form>
+</body>
+</html>
