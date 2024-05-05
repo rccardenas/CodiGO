@@ -36,6 +36,10 @@ h1 {
   color: blue;
 }
 
+.laptop > h2::before {
+  content: "💻";
+}
+
 .laptop > h3 {
   color: cadetblue;
   text-align: right;
@@ -44,6 +48,10 @@ h1 {
 
 .cellphone > h2 {
   color: green;
+}
+
+.cellphone > h2::before {
+  content: "📱";
 }
 
 .cellphone > h3 {
@@ -56,6 +64,10 @@ h1 {
   color: aqua;
 }
 
+.earphones > h2::before {
+  content: "🎧";
+}
+
 .earphones > h3 {
   color: purple;
   text-align: right;
@@ -66,9 +78,64 @@ h1 {
   color: gray;
 }
 
+.tablet > h2::before {
+  content: "📟";
+}
+
 .tablet > h3 {
   color: brown;
   text-align: right;
   padding-right: 10px;
 }
 
+/* ESTILOS PARA EL FORMULARIO */
+
+.div_form {
+  width: 400px;
+  margin: 20px auto;
+}
+
+.div_form > form > input{
+  height: 40px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  width: 70%;
+  font-size: 20px;
+  padding-left: 20px;
+  outline: none;
+}
+
+.div_form > form > input:focus {
+  border: 2px solid blue;
+}
+
+.div_form > form > button {
+  height: 40px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  width: 28%;
+  outline: none;
+}
+
+.div_form > form > button:hover {
+  background-color: #666;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.div_form > form > button:focus {
+  border: 2px solid red;
+}
+
+/* PSEUDO-ELEMENTOS */
+
+.price::before {
+  content: "$ ";
+  font-size: 12px;
+}
+
+.price::after {
+  content: ".00";
+  font-size: 12px;
+}
