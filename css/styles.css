@@ -37,7 +37,7 @@ h1 {
 }
 
 .laptop > h2::before {
-  content: "💻";
+  content: " 💻 ";
 }
 
 .laptop > h3 {
@@ -51,7 +51,7 @@ h1 {
 }
 
 .cellphone > h2::before {
-  content: "📱";
+  content: " 📱 ";
 }
 
 .cellphone > h3 {
@@ -65,7 +65,7 @@ h1 {
 }
 
 .earphones > h2::before {
-  content: "🎧";
+  content: " 🎧 ";
 }
 
 .earphones > h3 {
@@ -79,7 +79,7 @@ h1 {
 }
 
 .tablet > h2::before {
-  content: "📟";
+  content: " 📟 ";
 }
 
 .tablet > h3 {
