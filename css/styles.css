@@ -1,3 +1,10 @@
+/* IMPORTAR UNA FUENTE */
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+
 /* SELECTORES */
 
 /* Selectore de elemento */
@@ -11,7 +18,7 @@ h1 {
 }
 
 #div_temas{
-  display: none;
+  display: block;
 }
 
 .product_cell {

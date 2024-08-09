@@ -1,0 +1,36 @@
+/* El * significa el todo */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: red;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.padre {
+  display: flex;
+  height: 100vh;
+  /* Esto respetara el ancho de la pantalla, los elementos adicionales al maximo de pantalla pasaran abajo una fila mas */
+  flex-wrap: wrap;
+  /* justify-content permite alinear elementos horizontalmente */
+  /* flex-start: izquierda */
+  /* center: medio */
+  /* flex-end: derecha */
+  /* space-between: ubica los elementos de extremo a extremo */
+  /* space-around: ubica los elementos de extremo a extremo agregando un margen a los lados */
+  /* space-evenly: ubica los elementos con el mismo espacio de separacion agregando maergen a los lados */
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hijo {
+  width: 25%;
+  height: 100px;
+  border: solid 1px green;
+  background-color: #fff;
+}
+
