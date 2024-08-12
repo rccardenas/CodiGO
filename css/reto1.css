@@ -38,21 +38,6 @@ body {
   padding: 20px;
 }
 
-button {
-  margin-top: 20px;
-  width: 100%;
-  border: none;
-  padding: 10px;
-  color: #fff;
-  background-color: hsl(158, 36%, 37%);
-  border-radius: 8px;
-  font-family: "Monserrat", sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-}
-
 button:hover {
   cursor: pointer;
 }
@@ -73,6 +58,77 @@ button:hover {
   margin-left: 10px;
   font-size: 13px;
   text-decoration: line-through;
+}
+
+.sub-title {
+  font-family: "Montserrat", sans-serif;
+  color: hsl(228, 12%, 48%);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 5px;
+}
+
+.title {
+  color: hsl(212, 21%, 14%);
+  font-family: "Fraunces", sans-serif;
+  margin-top: 15px;
+}
+
+.text-content {
+  font-family: "Montserrat", sans-serif;
+  color: hsl(228, 12%, 48%);
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 13px;
+  font-weight: 500;
+}
+.sub-title {
+  font-family: "Montserrat", sans-serif;
+  color: hsl(228, 12%, 48%);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 5px;
+}
+
+.title {
+  color: hsl(212, 21%, 14%);
+  font-family: "Fraunces", sans-serif;
+  margin-top: 15px;
+}
+
+.text-content {
+  font-family: "Montserrat", sans-serif;
+  color: hsl(228, 12%, 48%);
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.button_addtocart {
+  margin-top: 10px;
+  width: 100%;
+  padding: 10px;
+  color: green ;
+  background-color: #fff;
+  border-color: green;
+  border-radius: 8px;
+}
+
+.button_1click {
+  margin-top: 20px;
+  width: 100%;
+  border: none;
+  padding: 10px;
+  color: #fff;
+  background-color: hsl(158, 36%, 37%);
+  border-radius: 8px;
+  font-family: "Monserrat", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  display: none;
 }
 
 @media (min-width: 600px) {
@@ -134,10 +190,13 @@ button:hover {
     padding: 30px;
   }
 
-  button {
-    margin-top: 30px;
-    padding: 20px;
-    font-size: 20px;
+  .button_addtocart {
+    margin-top: 5px;
+    padding: 10px;
+  }
+
+  .button_1click {
+    display: block;
   }
 
   .content-price {
@@ -153,27 +212,4 @@ button:hover {
     margin-left: 10px;
     font-size: 20px;
   }
-}
-
-.sub-title {
-  font-family: "Montserrat", sans-serif;
-  color: hsl(228, 12%, 48%);
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 5px;
-}
-
-.title {
-  color: hsl(212, 21%, 14%);
-  font-family: "Fraunces", sans-serif;
-  margin-top: 15px;
-}
-
-.text-content {
-  font-family: "Montserrat", sans-serif;
-  color: hsl(228, 12%, 48%);
-  margin-top: 15px;
-  margin-bottom: 15px;
-  font-size: 13px;
-  font-weight: 500;
 }
