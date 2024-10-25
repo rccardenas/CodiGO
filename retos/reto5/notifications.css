@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  background-color: blue;
+}
+
+.grid-container {
+  height: 100vh;
+  width: 100%;
+  background-color: #fff;
+  max-width: 600px;
+  margin: 0px auto;
+  padding: 20px;
+}
+
+@media (min-width: 600px) {
+  .grid-container {
+    margin: 40px auto;
+    border-radius: 20px;
+    padding: 30px;
+  }
+}
+
