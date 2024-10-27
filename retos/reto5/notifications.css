@@ -20,12 +20,19 @@ h1 {
   max-width: 600px;
   margin: 0px auto;
   padding: 20px;
+  display: grid;
+  grid-template-areas: 
+  "header"
+  "main";
+  grid-template-rows: 100px auto;
 }
 
 .header {
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
+  background-color: red;
+  grid-area: header;
 }
 
 .header .badge {
@@ -46,6 +53,21 @@ h1 {
   text-decoration: none;
 }
 
+.main {
+  background-color: green;
+  grid-area: main;
+  display: grid;
+  align-content: flex-start;
+  gap: 10px;
+}
+
+.main .card {
+  height: 100px;
+  background-color: aqua;
+  border-radius: 10px;
+  padding: 10px;
+}
+
 @media (min-width: 600px) {
   h1 {
     font-size: 2em;
@@ -54,5 +76,9 @@ h1 {
     margin: 40px auto;
     border-radius: 20px;
     padding: 30px;
+  }
+
+  .main {
+    gap: 20px;
   }
 }
