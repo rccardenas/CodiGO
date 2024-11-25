@@ -101,8 +101,3 @@ numeros.forEach(function (numero){
   console.log(numero);
   }
 })
-
-const meses = ["enero", "febrero", "marzo"];
-console.log(meses)
-meses.pop();
-console.log(meses);
