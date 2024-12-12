@@ -136,3 +136,13 @@ function crearPersonasClass() {
 
   console.log(personas);
 }
+
+function crearPersonasCustom() {
+  const nombre = prompt("Nombre: ");
+  const edad = prompt("Edad: ");
+  const genero = prompt("Genero: ");
+  const talla = prompt("Talla: ");
+  const persona = new Person(nombre, edad, genero, talla);
+  personas.push(persona);
+  console.log(personas);
+}
