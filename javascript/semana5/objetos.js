@@ -128,11 +128,13 @@ class Person {
 
 function crearPersonasClass() {
   const persona1 = new Person("rai", 29, "masculino", 170);
-  const persona2 = new Person("bruno", 32, "masculino", 179);
+  const persona2 = new Person("bruno", 18, "masculino", 179);
   const persona3 = new Person("elvia", 29, "femenino", 167);
+  const persona4 = new Person("arnold", 20, "masculino", 175);
   personas.push(persona1);
   personas.push(persona2);
   personas.push(persona3);
+  personas.push(persona4);
 
   console.log(personas);
 }
@@ -157,4 +159,38 @@ function notificacion() {
 
 function goVariables() {
   window.location.href = "variables.html";
+}
+
+function edadMinima() {
+  // Recorrer el arreglo de personas y determinar edad minima
+  let edadMinima = 100;
+
+  // personas.forEach((persona) => {
+  //   if (persona.years < edadMinima) {
+  //     edadMinima = persona.years;
+  //   }
+  // });
+
+  personas.forEach((persona) => {
+    edadMinima = Math.min(edadMinima, persona.years);
+  })
+
+  console.log("Edad Minima", edadMinima);
+}
+
+function buscarPersonaNombre() {
+  const term = prompt("Ingrese el nombre a buscar:");
+
+  let persona_match;
+  personas.forEach((persona) => {
+    if (persona.name === term) {
+      persona_match = persona;
+    }
+  });
+
+  console.log(persona_match);
+
+  // Ahora lo hacemos con .find()
+  const persona_find = personas.find((persona) => persona.name === term);
+  console.log(persona_find);
 }
