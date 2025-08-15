@@ -22,3 +22,17 @@ array_parrafos.forEach((p) => {
     p.classList.add("big");
   };
 });
+
+
+
+const nombre = document.getElementById("input_name");
+
+nombre.addEventListener("keyup", function (evento_keyup) {
+  const text = nombre.value;
+  console.log("value:", text);
+  console.log("key: ", evento_keyup.key);
+  console.log("code: ", evento_keyup.code);
+  // array_parrafos.forEach((p) => {
+  //   p.innerText = text;
+  // });
+});
