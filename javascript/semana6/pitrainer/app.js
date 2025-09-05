@@ -35,6 +35,26 @@ input_decimals.addEventListener("keypress", function (){
   this.focus();
 });
 
+function getSixcharacters() {
+  // usaremos SPLIT para convertir string a array
+  // const numeros = pi_decimals.split(""); // ("") separa los elementos del string por "nada" para crear el nuevo array
+  // si se agrega otro caracter, separaria el string por dicho caracter
+
+  // filter filtra array segun condicion indicada
+  // const newNumeros = numeros.filter((number, index) => index <= position + 5); // "=>" arrow function otra forma de crear una funcion
+
+  // result_decimals.innerHTML = "3." + newNumeros.join("");
+  // como newNumeros es un array por filter, join convierte un array a string con el separador ("") o sea nada, todo junto
+
+  // toda la funcion anterior se puede resumir en lo siguiente
+  result_decimals.innerHTML = 
+    "3." +
+    pi_decimals
+      .split("")
+      .filter((number, index) => index <= position + 5)
+      .join("");
+}
+
 input_decimals.addEventListener("keydown", function (evt) {
   if (evt.code == "Enter") return;
   const decimal = String.fromCharCode(evt.keyCode);
@@ -57,6 +77,8 @@ input_decimals.addEventListener("keydown", function (evt) {
     if (errors == 5) {
       input_decimals.disabled = true;
       button_start.disabled = false;
+      // llamar los siguientes 6 numeros para aprender
+      getSixcharacters();
     }
   }
   // Volver texto a negro
