@@ -54,10 +54,12 @@ function edit(id) {
   // Para crear un elemento type node tenemos que usar
   // la funcion createElement
   const container = document.createElement("div");
+  container.id = `task-edit-${id}`;
   container.style.display = "flex";
   container.style.gap = "5px";
 
   const input = document.createElement("input");
+  input.id = `task-edit-${id}`;
   // create element input type text
   input.type = "text";
   input.placeholder = "Ingresa nuevo nombre";
@@ -65,10 +67,29 @@ function edit(id) {
   const button = document.createElement("button");
   button.textContent = "Save"
   button.style.backgroundColor = "#ccc";
+  button.onclick = function () {
+    if (input.value === "") {
+      alert("Ingrese un nombre");
+      return
+    }
+
+    // update a nivel array
+    const oneTask = arrayTasks.find((task) => task._id === id);
+    oneTask._name = input.value;
+
+    // update a nivel visual
+    element.textContent = input.value;
+    element.style.display = "block";
+    container.remove();
+  }
 
   const buttonCancel = document.createElement("button");
   buttonCancel.textContent = "Cancel"
   buttonCancel.style.backgroundColor = "#ccc";
+  buttonCancel.onclick = function () {
+    container.remove();
+    element.style.display = "block";
+  }
 
   // appenChild agrega los elementos indicados dentro del container
   container.appendChild(input);
@@ -80,3 +101,4 @@ function edit(id) {
   // element.nextSibling cambia la posicion a despues del h6
   element.parentNode.insertBefore(container, element.nextSibling);
 }
+
