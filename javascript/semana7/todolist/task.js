@@ -16,24 +16,38 @@
 
 // IMPORTANTE: Una clase siempre inicia en MAYUSCULA
 // Para usar IMPORT de este archivo tenemos que detallar que nuestra clase sea EXPORTABLE agregando "export" antes de class
-export class Task {
+class Task {
   // Estos parametros
-  constructor(name, date, status) {
+  constructor(id, name, date, status) {
+    this._id = id;
     this._name = name;
     this._date = date;
     this._status = status;
   }
 
+  static destroyRender(id) {
+    const element = document.querySelector(`#task-${id}`);
+    element.remove();
+  }
+
+  static updateRender(id, name) {
+    const element = document.querySelector(`#task-name-${id}`);
+    // Para cambiar texto de un elemento se puede usar
+    // * innerText => antguo
+    // * textContent => moderno
+    element.textContent = name;
+  }
+
   // En una clase no hace falta usar la palabra function
   render() {
     return `
-      <div class="item__task">
+      <div id="task-${this._id}" class="item__task">
         <input type="checkbox">
-        <h6>${this._name}</h6>
-        <button>
+        <h6 id="task-name-${this._id}">${this._name}</h6>
+        <button onclick="edit(${this._id})">
           <img src="./images/edit.png" width="15" alt="">
         </button>
-        <button>
+        <button onclick="destroy(${this._id})">
           <img src="./images/delete.png" width="15" alt="">
         </button>
       </div>`;
