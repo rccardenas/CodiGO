@@ -1,0 +1,12 @@
+{
+  "name": "app-node",
+  "version": "1.0.0",
+  "description": "Este es mi primer proyecto en node",
+  "license": "ISC",
+  "author": "Rai Calderon",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  }
+}
