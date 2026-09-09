@@ -20,10 +20,19 @@ btnCreate.onclick = function () {
   listTask.innerHTML += task.render();
 
   inputTask.value = "";
+  inputTask.focus();
 };
 
+// Agregamos listener para crear tarea solo con Enter
+inputTask.addEventListener("keyup", (event) => {
+  if (event.key === "Enter") {
+    btnCreate.click();
+  }
+});
+
 function destroy(id) {
-// Para eliminar un elemento de un array podemos pedir que traiga todos los elementos menos el que tenga el ID que se esta recibiendo
+// Para eliminar un elemento de un array podemos pedir que traiga 
+// todos los elementos menos el que tenga el ID que se esta recibiendo
 // Recordemos que FILTER retorna ARRAY
 const filterTask = arrayTasks.filter((task) => task._id !== Number(id));
 // Con esto definimos que el valor de arrayTask es ahora filterTask
